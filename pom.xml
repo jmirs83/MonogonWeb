@@ -193,7 +193,7 @@
 
 		<!-- spring-mongodb -->
 		<dependency>
-			<groupId>org.springframework.data</groupId>
+			<groupId>org.springframework.data</groupId> 
 			<artifactId>spring-data-mongodb</artifactId>
 			<version>1.7.0.RELEASE</version>
 		</dependency>
