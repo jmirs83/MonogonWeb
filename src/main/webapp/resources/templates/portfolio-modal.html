@@ -1,0 +1,87 @@
+
+    <div class="portfolio-modal modal fade" ng-repeat="pjt in pjtList track by $index" id="portfolioModal{{ pjt.id }}" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2 ng-bind="pjt.pjt_name"></h2>
+                                <p class="item-intro text-muted">{{ pjtIndex }}Lorem ipsum dolor sit amet consectetur.</p>
+                                
+                                <div id="myCarousel{{ pjt.id }}" class="carousel slide" data-ride="carousel"> 
+                                  <!-- Indicators -->
+                                  <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel{{ pjt.id }}" ng-repeat="img in pjt.slides" class="{active : ($first)}" data-slide-to="{{ $index }}"></li>
+                                  </ol>
+                                  <div class="carousel-inner">
+                                    <div ng-class="{item: true, active : ($first)}" ng-repeat="img in pjt.slides"> 
+                                        <img class="img-responsive img-centered" ng-src="{{ img.src }}" alt="Slide numder {{ $index + 1 }}">
+                                      <div class="container">
+                                        <div class="carousel-caption"> 
+                                            <h4>Slide {{$index+1}}</h4>
+                                            <p>asdf</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <a class="left carousel-control" href="#myCarousel{{ pjt.id }}" role="button" data-slide="prev">
+                                      <span class="glyphicon glyphicon-chevron-left"></span>
+                                    </a> 
+                                    <a class="right carousel-control" href="#myCarousel{{ pjt.id }}" role="button" data-slide="next">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                    </a> 
+                                </div>
+<!--                                <br/><br/>-->
+                                <!-- /.carousel --> 
+
+<!--
+                                <div style="height: auto; margin-bottom : 40px;">
+                                    <carousel interval="myInterval">
+                                        <slide ng-repeat="slide in pjt.slides" active="slide.active">
+                                            <img ng-src="{{slide.src}}" style="margin:auto;">
+                                            <div class="carousel-caption">
+                                                <h4>Slide {{$index+1}}</h4>
+                                                <p>{{slide.text}}</p>
+                                            </div>
+                                        </slide>
+                                    </carousel>
+                                </div>
+-->
+<!--
+                                <div class="slider">
+                                    <div class="slide" ng-repeat="img in pjt.main_img_list" ng-show="img.visible">
+                                        <img class="img-responsive img-centered" ng-src="{{ img.src }}" />
+                                    </div>
+                                    <div class="arrows">
+                                        <a href="#" ng-click="prev()">
+                                            <img src="resources/img/left-arrow.png" />
+                                        </a>
+                                        <a href="#" ng-click="next()">
+                                            <img src="resources/img/right-arrow.png" />
+                                        </a>
+                                    </div>
+                                </div>
+-->
+<!--                                <img class="img-responsive img-centered" ng-repeat="imgs in pjt.main_img_list" ng-src="{{ imgs.src }}" alt="">-->
+                                <div ng-if="$first == true" ng-bind-html="pjt.bind_html">
+                                    
+                                </div>
+                                <ul class="list-inline">
+                                    <li>Date: July 2014</li>
+                                    <li>Client: {{ pjt.pjt_name }}</li>
+                                    <li>Category: {{ pjt.pjt_genre }}</li>
+                                </ul>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
